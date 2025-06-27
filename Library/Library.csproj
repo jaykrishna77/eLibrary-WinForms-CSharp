@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9E67AA3-115F-4E5C-B52F-DCB966EB4729}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Library</RootNamespace>
+    <AssemblyName>Library</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.30.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.30.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="LibraryDB">
+      <HintPath>..\..\LibraryDB\LibraryDB\bin\Debug\LibraryDB.exe</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.9.3.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlDBOperations">
+      <HintPath>..\..\MySqlDBOperations\MySqlDBOperations\bin\Debug\MySqlDBOperations.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.8.5.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.8.5\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Author\AuthorDBInsertion.cs" />
+    <Compile Include="Author\AuthorDeleteDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\AuthorDeleteDetails.Designer.cs">
+      <DependentUpon>AuthorDeleteDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author\AuthorDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\AuthorDetails.Designer.cs">
+      <DependentUpon>AuthorDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author\AuthorInsertDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\AuthorInsertDetails.Designer.cs">
+      <DependentUpon>AuthorInsertDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author\AuthorUpdateDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\AuthorUpdateDetails.Designer.cs">
+      <DependentUpon>AuthorUpdateDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\BookingInsertDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\BookingInsertDetails.Designer.cs">
+      <DependentUpon>BookingInsertDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\BookingDeleteDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\BookingDeleteDetails.Designer.cs">
+      <DependentUpon>BookingDeleteDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\BookingOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\BookingOps.Designer.cs">
+      <DependentUpon>BookingOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\BooksDeleteDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Books\BooksDeleteDetails.Designer.cs">
+      <DependentUpon>BooksDeleteDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\BooksInsertDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Books\BooksInsertDetails.Designer.cs">
+      <DependentUpon>BooksInsertDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\BooksOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Books\BooksOps.Designer.cs">
+      <DependentUpon>BooksOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Genre\GenreDeleteDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Genre\GenreDeleteDetails.Designer.cs">
+      <DependentUpon>GenreDeleteDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Genre\GenreInsertDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Genre\GenreInsertDetails.Designer.cs">
+      <DependentUpon>GenreInsertDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Genre\GenreOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Genre\GenreOps.Designer.cs">
+      <DependentUpon>GenreOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library.Designer.cs">
+      <DependentUpon>Library.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author\AuthorOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\AuthorOps.Designer.cs">
+      <DependentUpon>AuthorOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publisher\PublisherDeleteDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\PublisherDeleteDetails.Designer.cs">
+      <DependentUpon>PublisherDeleteDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher\PublisherDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\PublisherDetails.Designer.cs">
+      <DependentUpon>PublisherDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher\PublisherInsertDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\PublisherInsertDetails.Designer.cs">
+      <DependentUpon>PublisherInsertDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher\PublisherOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\PublisherOps.Designer.cs">
+      <DependentUpon>PublisherOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher\PublisherUpdateDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\PublisherUpdateDetails.Designer.cs">
+      <DependentUpon>PublisherUpdateDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLogin\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin\UserLogin.cs" />
+    <Compile Include="UserLogin\UserSignInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLogin\UserSignInForm.Designer.cs">
+      <DependentUpon>UserSignInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserInsertDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserInsertDetails.Designer.cs">
+      <DependentUpon>UserInsertDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserDeleteDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserDeleteDetails.Designer.cs">
+      <DependentUpon>UserDeleteDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserOps.Designer.cs">
+      <DependentUpon>UserOps.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Author\AuthorDeleteDetails.resx">
+      <DependentUpon>AuthorDeleteDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\AuthorDetails.resx">
+      <DependentUpon>AuthorDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\AuthorInsertDetails.resx">
+      <DependentUpon>AuthorInsertDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\AuthorOps.resx">
+      <DependentUpon>AuthorOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\AuthorUpdateDetails.resx">
+      <DependentUpon>AuthorUpdateDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\BookingDeleteDetails.resx">
+      <DependentUpon>BookingDeleteDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\BookingOps.resx">
+      <DependentUpon>BookingOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\BooksDeleteDetails.resx">
+      <DependentUpon>BooksDeleteDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\BooksInsertDetails.resx">
+      <DependentUpon>BooksInsertDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\BooksOps.resx">
+      <DependentUpon>BooksOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Genre\GenreDeleteDetails.resx">
+      <DependentUpon>GenreDeleteDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Genre\GenreInsertDetails.resx">
+      <DependentUpon>GenreInsertDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Genre\GenreOps.resx">
+      <DependentUpon>GenreOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Library.resx">
+      <DependentUpon>Library.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Publisher\PublisherDeleteDetails.resx">
+      <DependentUpon>PublisherDeleteDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\PublisherDetails.resx">
+      <DependentUpon>PublisherDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\PublisherInsertDetails.resx">
+      <DependentUpon>PublisherInsertDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\PublisherOps.resx">
+      <DependentUpon>PublisherOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\PublisherUpdateDetails.resx">
+      <DependentUpon>PublisherUpdateDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLogin\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLogin\UserSignInForm.resx">
+      <DependentUpon>UserSignInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserDeleteDetails.resx">
+      <DependentUpon>UserDeleteDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserInsertDetails.resx">
+      <DependentUpon>UserInsertDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserOps.resx">
+      <DependentUpon>UserOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
