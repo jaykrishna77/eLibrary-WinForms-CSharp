@@ -2,7 +2,7 @@
 
 A desktop-based eLibrary Management System developed using **C# (.NET WinForms)** and **SQL Server**. The application provides functionalities to manage books, authors, users, and borrowing/returning of books. Suitable for small libraries, schools, or personal collections.
 
-[▶️ Watch the demo video](Library/DemoVideo/Screen-Recording-1.mp4)
+[▶️ Watch the demo video](Library/DemoVideo/ScreenRecording.mp4)
 
 
 ---
